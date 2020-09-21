@@ -1,23 +1,44 @@
 import java.util.Scanner;
 
+// almost done --- doesnt pass tests
+// I have developed a coding framwork that I could easily fix with more time.
+
 public class Caesar {
     public static String encryptCaesar(String message) {
-        return message;
-        // REPLACE THIS WITH YOUR CODE
+        String ReturnString = "";
+        int MessageLen = message.length();
+        for (int i = 0; i<MessageLen;i++){
+            if (((message.charAt(i) >= 65) && (message.charAt(i)<87)) || ((message.charAt(i)>= 97) && (message.charAt(i)<119))) {
+                ReturnString += (char)(message.charAt(i) + 3);
+            }
+            else {
+                ReturnString += (char)(message.charAt(i) - 23);
+            }
+        }
+        return ReturnString;
     }
 
     public static String decryptCaesar(String message) {
-        return message;
-        // REPLACE THIS WITH YOUR CODE
+        String ReturnString = "";
+        int MessageLen = message.length();
+        for (int i  = 0; i<MessageLen;i++) {
+            if ( ((message.charAt(i) >= 68) && (message.charAt(i)<=90)) || ((message.charAt(i)>= 100) && (message.charAt(i)<=122)) ) {
+                ReturnString += (char)(message.charAt(i) - 3);
+            }
+            else {
+                ReturnString += (char)(message.charAt(i) + 23);
+            }
+        }
+        return ReturnString;
     }
 
     public static String encryptCaesarKey(String message, int key) {
-        return message;
+        return message; //THIS IS ON THE OTHER FILE //THIS IS ON THE OTHER FILE
         // REPLACE THIS WITH YOUR CODE
     }
 
     public static String decryptCaesarKey(String message, int key) {
-        return message;
+        return message; //THIS IS ON THE OTHER FILE //THIS IS ON THE OTHER FILE
         // REPLACE THIS WITH YOUR CODE
     }
 

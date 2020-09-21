@@ -1,14 +1,38 @@
 import java.util.Scanner;
 
+// same problem as the other .java 
+// good framework but doesnt past test 
+
+
 public class Vigenere {
     public static String encryptVigenere(String message, String key) {
-        return message;
-        // REPLACE THIS WITH YOUR CODE
+        String ReturnString = "";
+        int KeyNum = Integer.parseInt(key);
+        int MessageLen = message.length();
+        for (int i = 0; i<MessageLen;i++){
+            if (((message.charAt(i) >= 65) && (message.charAt(i)<=87)) || ((message.charAt(i)>= 97) && (message.charAt(i)<=119))) {
+                ReturnString += (char)(message.charAt(i) + KeyNum);
+            }
+            else {
+                ReturnString += (char)(message.charAt(i) - (26 - KeyNum));
+            }
+        }
+        return ReturnString;
     }
 
     public static String decryptVigenere(String message, String key) {
-        return message;
-        // REPLACE THIS WITH YOUR CODE
+        String ReturnString = "";
+        int KeyNum = Integer.parseInt(key);
+        int MessageLen = message.length();
+        for (int i  = 0; i<MessageLen;i++) {
+            if ( ((message.charAt(i) >= 68) && (message.charAt(i)<=90)) || ((message.charAt(i)>= 100) && (message.charAt(i)<=122)) ) {
+                ReturnString += (char)(message.charAt(i) - KeyNum);
+            }
+            else {
+                ReturnString += (char)(message.charAt(i) + (26 -KeyNum));
+            }
+        }
+        return ReturnString;
     }
 
 
