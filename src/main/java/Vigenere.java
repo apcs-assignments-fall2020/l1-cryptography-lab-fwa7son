@@ -35,7 +35,6 @@ public class Vigenere {
         return ReturnString;
     }
 
-
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
